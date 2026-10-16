@@ -1,1 +1,1 @@
-{"cleanUrls":true,"headers":[{"source":"/(photos|video)/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=604800"}]}]}
+{"cleanUrls": true, "headers": [{"source": "/(photos|video)/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=604800"}]}, {"source": "/ads/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "X-Robots-Tag", "value": "noindex"}]}]}
