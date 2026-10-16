@@ -218,6 +218,47 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
 .dock a{flex:1}
 @media (max-width:560px){.day{grid-template-columns:1fr;gap:4px}.events li{grid-template-columns:1fr;gap:6px}}
 @media (max-width:760px){.dock{display:flex}section{padding:72px 0}.cta{padding:32px 24px}}
+
+/* ---- phone ---- */
+.mprice{display:none}
+@media (max-width:760px){
+ section{padding:56px 0}
+ .hero{padding:0}
+ .hero>.wrap{padding:0}
+ .hero-grid{position:relative;display:block;min-height:calc(100svh - 64px);min-height:calc(100vh - 64px);overflow:hidden}
+ .collage{position:absolute;inset:0;display:block}
+ .collage .a{position:absolute;inset:0;border-radius:0}
+ .collage>.ph{display:none}
+ .hero-grid>div:first-child{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:140px 20px 92px;color:#fff;background:linear-gradient(0deg,rgba(10,22,14,.9) 0%,rgba(10,22,14,.6) 55%,rgba(10,22,14,0) 100%)}
+ .hero h1{font-size:46px;color:#fff}
+ .hero h1 em{color:var(--corn)}
+ .hero .lead,.hero-grid .hero-actions{display:none}
+ .now{font-size:13px;padding:6px 12px;margin-bottom:14px;color:var(--pine)}
+ .dock .btn.dark{box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+ .mprice{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:16px;font-size:16px;line-height:1.3}
+ .mprice b{font-weight:900;font-size:20px;color:var(--corn)}
+ .hero .facts{margin:0 20px;border-top:0}
+ .hero .facts div:nth-child(2),.hero .facts div:nth-child(3){display:none}
+ .hero .facts div:nth-child(4){border-top:0;padding-left:20px;border-left:1px solid var(--line)}
+ .pumpkins{height:80px;margin-top:16px}
+ .spots,.who,.seasons{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;gap:12px;margin-left:-20px;margin-right:-20px;padding:0 20px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .spots::-webkit-scrollbar,.who::-webkit-scrollbar,.seasons::-webkit-scrollbar{display:none}
+ .spots>*,.seasons>*{flex:0 0 80%;scroll-snap-align:start}
+ .who>*{flex:0 0 74%;scroll-snap-align:start}
+ .spots{margin-top:28px}.who,.seasons{margin-top:28px}
+ .spot .ph{height:210px}
+ .season .ph,.season .art{height:150px}
+ .swipe{display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin-top:18px}
+ .price-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:28px}
+ .pc{padding:16px 12px}
+ .pc b{font-size:32px}.pc b small{font-size:14px}
+ .pc span{font-size:15px;margin-top:8px;line-height:1.2}.pc em{font-size:12px;line-height:1.3;margin-top:4px}
+ .schools .ph{display:none}
+ .story .ph{height:240px}
+ .map{height:260px}
+}
+.swipe{display:none}
+@media (max-width:760px){.swipe{display:block}}
 </style>
 </head>
 <body>
@@ -243,6 +284,7 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
         <div>
           <span class="now"><i></i>Відчинено щодня 9:00–20:00 · до закриття сезону 5 вихідних</span>
           <h1>Райський куточок <em>на Закарпатті</em></h1>
+          <p class="mprice"><span><b>300</b> грн дорослий</span><span><b>250</b> дитячий</span><span>до 120 см — <b>безкоштовно</b></span></p>
           <p class="lead">Ландшафтний парк біля Ужгорода, який щосезону змінюється: навесні — поле тюльпанів, улітку — лаванда, восени — тонни гарбузів і солом'яні фігури.</p>
           <div class="hero-actions">
             <a class="btn main" href="https://www.google.com/maps/search/?api=1&query=Paradise+Park+%D0%A2%D0%B8%D0%B9%D0%B3%D0%BB%D0%B0%D1%88" target="_blank" rel="noopener">Прокласти маршрут</a>
@@ -288,6 +330,7 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
         </div>
         <p class="lead">З 1 жовтня парк вкрили гарбузові композиції, солом'яні тварини й кукурудзяні альтанки. Територія велика — діти бігають самі, а дорослі відпочивають.</p>
       </div>
+      <span class="swipe">Гортайте →</span>
       <div class="spots">
         <article class="spot"><div class="ph" style="background-image:url('photos/1.jpg')"></div><div class="t"><h3>Гарбузовий будиночок</h3><p>Повністю оточений гарбузами — найяскравіша локація сезону.</p></div></article>
         <article class="spot"><div class="ph" style="background-image:url('photos/10.jpg')"></div><div class="t"><h3>Піраміда з тюків</h3><p>Солом'яні сходи з гарбузами й опудалом — по них можна лазити.</p></div></article>
