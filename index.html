@@ -262,6 +262,12 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
 .swipe{display:none}
 @media (max-width:760px){.swipe{display:block}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1653307293033637');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1653307293033637&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
 
@@ -558,13 +564,14 @@ mixpanel.init("c41c1dcff5cba9cc97cb7d909ecb5eec",{api_host:"https://api-eu.mixpa
   function where(el){var s=el.closest('section[id],header,footer,.dock,nav');return s?(s.id||s.className||s.tagName).toString().split(' ')[0].toLowerCase():'page';}
   document.addEventListener('click',function(ev){
     var a=ev.target.closest('a,button');if(!a)return;var h=a.getAttribute('href')||'';var p={place:where(a),label:(a.textContent||a.getAttribute('aria-label')||'').trim().slice(0,60)};
-    if(h.indexOf('tel:')===0){p.phone=h.slice(4);mixpanel.track('Дзвінок',p);}
-    else if(/google\.com\/maps|goo\.gl\/maps/.test(h)){mixpanel.track('Маршрут',p);}
+    var fb=window.fbq||function(){};
+    if(h.indexOf('tel:')===0){p.phone=h.slice(4);mixpanel.track('Дзвінок',p);fb('track','Contact',{method:'phone',place:p.place});}
+    else if(/google\.com\/maps|goo\.gl\/maps/.test(h)){mixpanel.track('Маршрут',p);fb('track','FindLocation',{place:p.place});}
     else if(/instagram\.com/.test(h)){mixpanel.track('Instagram',p);}
-    else if(h==='#tsiny'){mixpanel.track('Ціни',p);}
+    else if(h==='#tsiny'){mixpanel.track('Ціни',p);fb('track','ViewContent',{content_name:'Ціни'});}
     else if(h.charAt(0)==='#'){p.target=h;mixpanel.track('Меню навігації',p);}
   },true);
-  var seen={};if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var id=e.target.id;if(e.isIntersecting&&!seen[id]){seen[id]=1;mixpanel.track('Перегляд блоку',{block:id});if(id==='tsiny')mixpanel.track('Ціни переглянуто');}});},{threshold:.4});document.querySelectorAll('section[id]').forEach(function(s){io.observe(s);});}
+  var seen={};if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var id=e.target.id;if(e.isIntersecting&&!seen[id]){seen[id]=1;mixpanel.track('Перегляд блоку',{block:id});if(id==='tsiny'){mixpanel.track('Ціни переглянуто');if(window.fbq)fbq('trackCustom','PricesSeen');}}});},{threshold:.4});document.querySelectorAll('section[id]').forEach(function(s){io.observe(s);});}
   var marks=[25,50,75,100],done={};window.addEventListener('scroll',function(){var d=document.documentElement,pc=Math.round((window.scrollY+window.innerHeight)/d.scrollHeight*100);marks.forEach(function(m){if(pc>=m&&!done[m]){done[m]=1;mixpanel.track('Скрол',{percent:m});}});},{passive:true});
   var v=document.querySelector('video');if(v){v.addEventListener('playing',function f(){mixpanel.track('Відео грає');v.removeEventListener('playing',f);});}
   var t0=Date.now();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'){mixpanel.track('Вихід',{seconds:Math.round((Date.now()-t0)/1000)},{transport:'sendBeacon'});}});
