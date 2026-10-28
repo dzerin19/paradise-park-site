@@ -77,7 +77,7 @@ section{padding:96px 0}
 .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
 .hero .lead{margin-top:22px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.now{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;margin-bottom:22px;box-shadow:0 1px 0 var(--line)}
+.now{display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;margin-bottom:22px;box-shadow:0 1px 0 var(--line)}
 .now i{width:9px;height:9px;border-radius:50%;background:#3FA34D;box-shadow:0 0 0 4px rgba(63,163,77,.18)}
 .collage{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:250px 250px;gap:12px}
 .collage .a{grid-row:1/3;position:relative;overflow:hidden;border-radius:var(--r);background:#1b2e21}
@@ -283,7 +283,7 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <span class="now"><i></i>Відчинено щодня 9:00–20:00 · до закриття сезону 5 вихідних</span>
+          <a class="now" href="#vykhidni"><i></i>Сб 31.10 з 17:00 — «Ніч, коли парк оживає» · Нд 1.11 о 15:00 — бульбашкове шоу</a>
           <h1>Райський куточок <em>на Закарпатті</em></h1>
           <p class="mprice"><span><b>300</b> грн дорослий</span><span><b>250</b> дитячий</span><span>до 120 см — <b>безкоштовно</b></span></p>
           <p class="lead">Ландшафтний парк біля Ужгорода, який щосезону змінюється: навесні — поле тюльпанів, улітку — лаванда, восени — тонни гарбузів і солом'яні фігури.</p>
@@ -362,7 +362,8 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
       <div>
         <p class="kicker">Календар осені</p>
         <ul class="events">
-          <li><time datetime="2026-10-25">25 жовтня<small>неділя</small></time><div><h3>Дитячий Halloween у стилі Wednesday <span class="soon">цієї неділі</span></h3><p>З 15:00 — аніматори, ігри та конкурс на найкращий костюм. Приходьте в костюмах! Цілий день — поні, надувні гірки, батути, фотозони, кав'ярня, бограч і глінтвейн (для дітей — безалкогольний).</p></div></li>
+          <li><time datetime="2026-10-31">31 жовтня<small>субота</small></time><div><h3>Ніч, коли парк оживає <span class="soon">цієї суботи</span></h3><p>З 17:00, щойно сідає сонце, парк світиться: фігури з палаючими очима оживають, коли проходите повз, а в шатрі страху — атмосфера лише для сміливих. Біля вогню — музика, гарячий глінтвейн, бограч і шашлик. Удень — звичайна програма парку.</p></div></li>
+          <li><time datetime="2026-11-01">1 листопада<small>неділя</small></time><div><h3>Бульбашкове шоу <span class="soon">цієї неділі</span></h3><p>О 15:00 — тисячі мильних бульбашок, 2 аніматори, ігри, танці й аквагрим (1,5 години). Вхід: діти до 6 років — 200 грн, 7–11 років — 250 грн, дорослі — 300 грн.</p></div></li>
           <li><time datetime="2026-11-08">8 листопада<small>неділя</small></time><div><h3>Мартинів день</h3><p>Молоде вино, страви з гуски, музика.</p></div></li>
           <li><time datetime="2026-11-15">15 листопада<small>неділя</small></time><div><h3>Бограч-батл і закриття сезону</h3><p>Останні вихідні осені в парку.</p></div></li>
         </ul>
@@ -396,7 +397,7 @@ footer b{color:var(--pine);font:700 22px var(--serif)}
         <div>
           <h3>Еко-бар</h3>
           <div class="menu">
-            <span class="hot">Бограч · Сб–Нд</span><span class="hot">Шашлик · Сб–Нд</span><span class="hot">Печена картопля · Сб–Нд</span><span class="hot">Домашня картопля фрі</span><span class="hot">Глінтвейн · неділя</span><span class="hot">Дитячий глінтвейн без алкоголю · неділя</span>
+            <span class="hot">Бограч · Сб–Нд</span><span class="hot">Шашлик · Сб–Нд</span><span class="hot">Печена картопля · Сб–Нд</span><span class="hot">Домашня картопля фрі</span><span class="hot">Глінтвейн · Сб–Нд</span><span class="hot">Дитячий глінтвейн без алкоголю · Сб–Нд</span>
             <span>Піца</span><span>Хот-доги</span><span>Бургери</span><span>Курячі нагетси</span><span>Креветки в темпурі</span><span>Сирники</span><span>Форнетті</span><span>Свіжа випічка</span><span>Солодка вата</span><span>Попкорн</span><span>Гарячі й холодні напої</span>
           </div>
           <h3 style="margin-top:36px">Альтанки</h3>
